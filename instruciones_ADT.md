@@ -81,7 +81,33 @@ az dt role-assignment create \
 az dt role-assignment list \
   -n Industry40ADT-DT
 
+```
 
+# Subir los modelos
 
+```bash
+az dt model create \
+    --dt-name Industry40ADT-DT \
+    --models Building.json
 
+az dt model create \
+    --dt-name Industry40ADT-DT \
+    --models Floor.json
+
+az dt model create \
+    --dt-name Industry40ADT-DT \
+    --models  Room.json
+
+# Comprobar que están cargados
+az dt model list \
+    --dt-name Industry40ADT-DT
+```
+# Crear Instancias
+
+```
+az dt twin create \
+   --dt-name Industry40ADT-DT \
+   --twin-id Building01 \
+   --model-id "dtmi:com:example:Building;1" \
+   --properties building-twin.json
 ```

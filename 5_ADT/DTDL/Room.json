@@ -1,0 +1,18 @@
+{
+  "@id": "dtmi:com:empresa:Room;1",
+  "@type": "Interface",
+  "displayName": "Room",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "roomName",
+      "schema": "string"
+    },
+    {
+      "@type": "Property",
+      "name": "surface",
+      "schema": "double"
+    }
+  ],
+  "@context": "dtmi:dtdl:context;2"
+}

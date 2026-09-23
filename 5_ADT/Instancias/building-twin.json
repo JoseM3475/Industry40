@@ -1,0 +1,6 @@
+{
+  "$metadata": {
+    "$model": "dtmi:com:empresa:Building;1"
+  },
+  "name": "Edificio Principal"
+}
