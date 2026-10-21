@@ -1,0 +1,18 @@
+{
+  "@id": "dtmi:com:empresa:Floor;1",
+  "@type": "Interface",
+  "displayName": "Floor",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "floorNumber",
+      "schema": "integer"
+    },
+    {
+      "@type": "Relationship",
+      "name": "contains",
+      "target": "dtmi:com:empresa:Room;1"
+    }
+  ],
+  "@context": "dtmi:dtdl:context;2"
+}
