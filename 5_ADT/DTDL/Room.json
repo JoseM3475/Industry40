@@ -2,6 +2,7 @@
   "@id": "dtmi:com:empresa:Room;1",
   "@type": "Interface",
   "displayName": "Room",
+  "@context": "dtmi:dtdl:context;2",
   "contents": [
     {
       "@type": "Property",
@@ -12,7 +13,12 @@
       "@type": "Property",
       "name": "surface",
       "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "temperature",
+      "displayName": "Temperature",
+      "schema": "double"
     }
-  ],
-  "@context": "dtmi:dtdl:context;2"
+  ]
 }
