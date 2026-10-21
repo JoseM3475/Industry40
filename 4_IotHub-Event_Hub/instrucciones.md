@@ -70,7 +70,7 @@ az iot hub routing-endpoint create `
   --endpoint-resource-group Industry40 `
   --endpoint-subscription-id 05ca285f-d2ae-4f9e-abdc-d6ce4aa76182 `
   --endpoint-type eventhub `
-  --connection-string ""
+  --connection-string "Endpoint=sb://industry40ehns.servicebus.windows.net/;SharedAccessKeyName=lecturaescritura;SharedAccessKey=YDlN/HdEZTugYesAEKNUJshkbUVbQX+LB+AEhBuDIHw=;EntityPath=telemetria"
 
 ## Crear una ruta
 
