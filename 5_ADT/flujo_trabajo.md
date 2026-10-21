@@ -191,7 +191,57 @@ az dt model create \
 az dt model list \
     --dt-name Industry40ADT-DT
 ```
+## 5. Crear las instancias
 
+Crear el Edificio
+```bash
+az dt twin create \
+  --dt-name Industry40ADT-DT \
+  --twin-id Èdificio \
+  --dtmi "dtmi:com:empresa:Building;1" \
+  --properties '{"name":"Edificio Principal"}'
 
+az dt twin create \
+  --dt-name Industry40ADT-DT \
+  --twin-id Planta0 \
+  --dtmi "dtmi:com:empresa:Floor;1" \
+  --properties '{"floorNumber":0}'
+
+az dt twin create \
+  --dt-name Industry40ADT-DT \
+  --twin-id Habitacion1 \
+  --dtmi "dtmi:com:empresa:Room;1" \
+  --properties '{"roomName":"Habitacion Primera"}'
+
+az dt twin create \
+  --dt-name Industry40ADT-DT \
+  --twin-id Habitacion2 \
+  --dtmi "dtmi:com:empresa:Room;1" \
+  --properties '{"roomName":"Habitacion Segunda"}'
+```
+## 6. Establecer las relaciones
+
+```bash
+az dt twin relationship create \
+  --dt-name Industry40ADT-DT \
+  --relationship-id edificio-planta0 \
+  --source Èdificio \
+  --relationship contains \
+  --target Planta0
+
+az dt twin relationship create \
+  --dt-name Industry40ADT-DT \
+  --relationship-id planta0-habitacion1 \
+  --source Planta0 \
+  --relationship contains \
+  --target Habitacion1
+
+az dt twin relationship create \
+  --dt-name Industry40ADT-DT \
+  --relationship-id planta0-habitacion2 \
+  --source Planta0 \
+  --relationship contains \
+  --target Habitacion2
+```
 
 
