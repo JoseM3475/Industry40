@@ -22,7 +22,7 @@
 
 ## 1. Identificar y modelar los activos físicos
 
-Las entidades del Digital Twin van a ser Buliding, Floor y Room.
+Las entidades del Digital Twin van a ser Building, Floor y Room.
 La habitación tiene un atributo: temperatura.
 
 
@@ -31,7 +31,7 @@ La habitación tiene un atributo: temperatura.
 Building
 ```JSON
 {
-  "@id": "dtmi:empresa:Building;1",
+  "@id": "dtmi:com:empresa:Building;1",
   "@type": "Interface",
   "displayName": "Building",
   "contents": [
@@ -42,8 +42,8 @@ Building
     },
     {
       "@type": "Relationship",
-      "name": "containsFloor",
-      "target": "dtmi:empresa:Floor;1"
+      "name": "contains",
+      "target": "dtmi:com:empresa:Floor;1"
     }
   ],
   "@context": "dtmi:dtdl:context;2"
@@ -52,7 +52,7 @@ Building
 Floor
 ```JSON
 {
-  "@id": "dtmi:empresa:Floor;1",
+  "@id": "dtmi:com:empresa:Floor;1",
   "@type": "Interface",
   "displayName": "Floor",
   "contents": [
@@ -63,8 +63,8 @@ Floor
     },
     {
       "@type": "Relationship",
-      "name": "containsRoom",
-      "target": "dtmi:empresa:Room;1"
+      "name": "contains",
+      "target": "dtmi:com:empresa:Room;1"
     }
   ],
   "@context": "dtmi:dtdl:context;2"
@@ -73,9 +73,10 @@ Floor
 Room
 ```JSON
 {
-  "@id": "dtmi:empresa:Room;1",
+  "@id": "dtmi:com:empresa:Room;1",
   "@type": "Interface",
   "displayName": "Room",
+  "@context": "dtmi:dtdl:context;2",
   "contents": [
     {
       "@type": "Property",
@@ -84,12 +85,16 @@ Room
     },
     {
       "@type": "Property",
+      "name": "surface",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
       "name": "temperature",
-      "schema": "double",
-      "displayName": "Temperature"
+      "displayName": "Temperature",
+      "schema": "double"
     }
-  ],
-  "@context": "dtmi:dtdl:context;2"
+  ]
 }
 ```
 ## 3. Crear la instancia de Azure Digital Twins
